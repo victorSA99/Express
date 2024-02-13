@@ -1,0 +1,34 @@
+{
+  "name": "capacitacion",
+  "version": "1.0.0",
+  "description": "Proyecto para capacitaciones",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorSA99/Express.git"
+  },
+  "keywords": [
+    "Mysql",
+    "Sequelize",
+    "MVC"
+  ],
+  "author": "Victor Manuel Sandoval Amaral",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victorSA99/Express/issues"
+  },
+  "homepage": "https://github.com/victorSA99/Express#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.4",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "mysql2": "^3.9.1",
+    "sequelize": "^6.37.0"
+  }
+}
