@@ -1,5 +1,5 @@
 import express from "express";
-import userRoutes from "./routes/userRoutes.js";
+import { routerUser } from "./routes/index.js";
 import db from "./config/db.js";
 
 const app = express();
@@ -16,7 +16,7 @@ try {
 }
 
 //routing
-app.use("/", userRoutes);
+app.use("/", routerUser);
 
 const port = 3000;
 app.listen(port, () => {
