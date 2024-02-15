@@ -1,5 +1,6 @@
 import { check, validationResult } from "express-validator";
 import Usuario from "../models/Usuarios.js";
+import { generateJWT } from "../helpers/tokens.js";
 
 const createUser = async (req, res) => {
   await check("name")
@@ -37,4 +38,21 @@ const getUser = async (req, res) => {
   res.json({ usuarios });
 };
 
-export { createUser, getUser };
+const login = async (req, res) => {
+  const { email, password } = req.body;
+
+  const usuario = await Usuario.findOne({ where: { email } });
+
+  if (!usuario) {
+    return res.status(400).send("El usuario no existe!");
+  }
+
+  const verify = await usuario.verificarPassword(password);
+  if (!verify) {
+    return res.status(400).send("Contraseña incorrecta!");
+  }
+  const token = generateJWT({ id: usuario.id });
+  return res.status(201).send(token);
+};
+
+export { createUser, getUser, login };
