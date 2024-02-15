@@ -5,7 +5,7 @@ node 20.0.0
 
 
 ## Instrucciones de instalacion
-Antes de ejecutar el proyecto se debe de hacer de ejcutar el siguinte comando
+Antes de compilar el proyecto se debe ejcutar el siguinte comando
 
 ```bash
 npm install
