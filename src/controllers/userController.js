@@ -1,4 +1,3 @@
-import { check, validationResult } from "express-validator";
 import { Usuario } from "../models/index.js";
 import { generateJWT } from "../helpers/tokens.js";
 
